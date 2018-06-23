@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Ender.HttpTestClient</RootNamespace>
+    <Authors>Ender</Authors>
+    <Company>Ender Inc.</Company>
+    <Copyright>Copyright © Ender Inc. 2018</Copyright>
   </PropertyGroup>
 
 </Project>
