@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ender.HttpTestClient
 {
-    class FileSystemOutputService : FormattingOutputServiceBase
+    public class FileSystemOutputService : FormattingOutputServiceBase
     {
         private string rootPath;
 

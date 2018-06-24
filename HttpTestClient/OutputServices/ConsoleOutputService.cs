@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Ender.HttpTestClient
 {
-    class ConsoleOutputService : FormattingOutputServiceBase
+    public class ConsoleOutputService : FormattingOutputServiceBase
     {
         public ConsoleOutputService(string messageTemplate = null)
         {

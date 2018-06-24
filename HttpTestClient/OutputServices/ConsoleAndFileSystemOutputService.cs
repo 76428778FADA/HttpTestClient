@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Ender.HttpTestClient
 {
-    class ConsoleAndFileSystemOutputService : IOutputService
+    public class ConsoleAndFileSystemOutputService : IOutputService
     {
         private IOutputService console;
         private IOutputService fileSystem;
