@@ -26,10 +26,17 @@ namespace Ender.HttpTestClient
             {
                 if (!isRun)
                     return;
-
+                HttpWebResponse response = null;
                 var request = WebRequest.Create(GetStringFromTemplate(settings.UrlTemplate, id)) as HttpWebRequest;
-                var response = await request.GetResponseAsync() as HttpWebResponse;
-                var body = await new StreamReader(request.GetRequestStream()).ReadToEndAsync();
+                try
+                {
+                    response = await request.GetResponseAsync() as HttpWebResponse;
+                }
+                catch (WebException ex)
+                {
+                    response = ex.Response as HttpWebResponse;
+                }
+                var body = await new StreamReader(response.GetResponseStream()).ReadToEndAsync();
                 await outputService.WriteAsync(id, (int)response.StatusCode, DateTime.Now, body);
             }
         }

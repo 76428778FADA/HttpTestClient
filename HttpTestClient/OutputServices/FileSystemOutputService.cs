@@ -16,6 +16,10 @@ namespace Ender.HttpTestClient
             this.template = string.IsNullOrEmpty(fileNameTemplate)
                 ? "{statusCode}-{id}-{timestamp}.html"
                 : fileNameTemplate;
+            if (!template.EndsWith(".html"))
+                template += ".html";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
         }
 
         public override async Task WriteAsync(int id, int statusCode, DateTime timestamp, string body)
